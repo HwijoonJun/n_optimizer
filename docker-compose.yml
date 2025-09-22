@@ -1,0 +1,16 @@
+version: "3.13"
+services:
+  db:
+    image: postgres:15
+    container_name: nutrition_db
+    environment:
+      POSTGRES_DB: fdata
+      POSTGRES_USER: fdata
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
